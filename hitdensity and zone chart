@@ -19,7 +19,7 @@ hill.loc[(hill['events'] == 'single') | (hill['events'] == 'double')| (hill['eve
 hill.loc[(hill['events'] != 'single') & (hill['events'] != 'double') & (hill['events'] != 'triple') & (hill['events'] != 'home_run'), 'hit_out'] = 'out' 
 
 
-plt.hexbin(hill['plate_x'], hill['plate_z'], C=data_archie['hit_out']=='hit',cmap=plt.cm.YlOrRd, gridsize = 25)
+plt.hexbin(hill['plate_x'], hill['plate_z'], C=hill['hit_out']=='hit',cmap=plt.cm.YlOrRd, gridsize = 25)
 
 
 
@@ -51,12 +51,13 @@ def plotstrikezone(df):
 
 
 
-plt.hexbin(hill['plate_x'], hill['plate_z'], C=data_archie['hit_out']=='hit',cmap=plt.cm.YlOrRd, gridsize = 15) 
+plt.hexbin(hill['plate_x'], hill['plate_z'], C=hill['hit_out']=='hit',cmap=plt.cm.YlOrRd, gridsize = 15) 
 plt.title('Tim Hill 2021 Hit Density (K-zone)')
 cb = plt.colorbar()
 cb.set_label('Hit Density') 
 
-plotstrikezone(hill) 
+#plotstrikezone(hill) 
 
 
-plot_pitches(hill)
+#plot_pitches(hill)
+
